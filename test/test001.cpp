@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(void)
+{
+	srand((unsigned int)time(NULL));
+	
+	int arr[10] = {0};
+	
+	for (int i = 0; i < 10; i++) {
+		arr[i] = i + 1;
+		printf("%d ", arr[i]);
+	}
+	printf("\n");
+	
+	for (int i = 0; i < 10; i++) {
+		int a = rand() % 10;
+		int b = rand() % 10;
+		int tmp = arr[a];
+		arr[a]	= arr[b];
+		arr[b]	= tmp;
+	}
+	
+	for (int i = 0; i < 10; i++) {
+		printf("%d ", arr[i]);
+	}
+	printf("\n");
+	
+	return 0;
+}
